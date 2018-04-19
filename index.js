@@ -110,19 +110,19 @@ const tail = (arr) => {
 //after each for loop check the variable, if true, continue the while loop
 //if false return arr
 const sort = (arr) => {
-    let swapped = true;
-    while(swapped) {
-        swapped = false;
-        for(let x = 0; x < arr.length-1; x++) {
-            if(arr[x] > arr[x+1]){
-                let holdValue = arr[x]; //stores value so it is not lost when arr[x+1] is put in its place
-                arr[x] = arr[x+1];
-                arr[x+1] = holdValue;
-                swapped = true;
-            }
-        }
-    } return arr; //when loop is exited, return sorted arr
-}
+    let swapped = false;
+      while(!swapped) {
+        swapped = true;
+            for(let x = 0; x < arr.length-1; x++) {
+              if(arr[x] > arr[x+1]){
+                  let holdValue = arr[x]; //stores value so it is not lost when arr[x+1] is put in its place
+                  arr[x] = arr[x+1];
+                  arr[x+1] = holdValue;
+                  swapped = false;
+              }
+          }
+      } return arr; //when loop is exited, return sorted arr
+  }
 //sort([5, 6, 4, 2, 9, 1, 8, 7, 3]) returns [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 exports.map = map;
